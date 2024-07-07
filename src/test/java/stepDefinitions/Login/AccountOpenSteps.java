@@ -52,14 +52,22 @@ public class AccountOpenSteps {
         Assert.assertEquals(reusableMethod.getTextOfElement(loginPage.alertText),"Warning: No match for E-Mail Address and/or Password.");
     }
 
+//    @When("Click on the My Account Button")
+//    public void clickOnTheMyAccountButton() {
+//        reusableMethod.waitUntilElementIsVisible(loginPage.AdvanceButton);
+//        reusableMethod.clickElement(loginPage.AdvanceButton);
+//        reusableMethod.clickElement(loginPage.proceedLink);
+//        reusableMethod.waitUntilElementIsVisible(loginPage.myAccountButton);
+//        reusableMethod.clickElement(loginPage.myAccountButton);
+//
+//    }
     @When("Click on the My Account Button")
-    public void clickOnTheMyAccountButton() {
+    public void click_on_the_my_account_button() {
         reusableMethod.waitUntilElementIsVisible(loginPage.AdvanceButton);
         reusableMethod.clickElement(loginPage.AdvanceButton);
         reusableMethod.clickElement(loginPage.proceedLink);
         reusableMethod.waitUntilElementIsVisible(loginPage.myAccountButton);
         reusableMethod.clickElement(loginPage.myAccountButton);
-
     }
 
     @And("Click on the Login Option")

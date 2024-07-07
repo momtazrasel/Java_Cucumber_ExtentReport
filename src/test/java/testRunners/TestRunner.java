@@ -2,21 +2,17 @@ package testRunners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
-@Test
-@CucumberOptions(features = "src/test/java/features", glue = "stepDefinitions",
-        monochrome = true,
-        tags = "@Demo",
-        plugin = {"pretty",
-                "html:results/cucumber.html",
-                "json:results/cucumber.json"}
+@CucumberOptions(
+        features = "src/test/java/features/AccountOpen.feature",
+        glue = {"stepDefinitions/CreateAccount"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports/Cucumber.html",
+                "json:target/cucumber-reports/Cucumber.json",
+                "junit:target/cucumber-reports/Cucumber.xml"
+        },
+        monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
-    @Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
 }
